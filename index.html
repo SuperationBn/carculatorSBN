@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+
+  <!-- Links -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Script -->
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="Menu">
+      <!-- Hamburger -->
+      <i class="fa-solid fa-bars"></i>
+      <div class="choseeTheme">
+        <div class="theme themeLigh"><span>Ligth</span><div class="color colorLigth"></div></div>
+        <div class="theme themeDark"><span>Dark</span><div class="color colorDark"></div></div>
+        <div class="theme themePikachu"><span>Pikachu</span><div class="color colorPikachu"></div></div>
+        <div class="theme themeChicle"><span>Chicle</span><div class="color colorChicle"></div></div>
+      </div>
+    </div>
+    <div class="logo"><h3>Carculator<span>SBN</span></h3></div>
+  </header>
+  <main>
+    <section class="calculator">
+      <div class="headerCarculator">
+        <div class="showNumbersBox">
+          <h4></h4>
+          <span></span>
+        </div>
+      </div>
+      <div class="bodyCalculator">
+        <button value="<" class="fa-solid fa-delete-left"></button>
+        <button value="clear" class="btn clear">C</button>
+        <button value="(" class="btn abrirParent">(</button>
+        <button value=")" class="btn cerrarParent">)</button>
+        <button value="/" class="btn dividir">÷</button>
+        <button value="+" class="btn sumar">+</button>
+        <button value="-" class="btn resta">-</button>
+        <button value="*" class="btn multi">x</button>
+        <button value="." class="btn punto">.</button>
+        <button value="7" class="btn siete">7</button>
+        <button value="8" class="btn ocho">8</button>
+        <button value="9" class="btn nueve">9</button>
+        <button value="4" class="btn cuatro">4</button>
+        <button value="5" class="btn cinco">5</button>
+        <button value="6" class="btn seix">6</button>
+        <button value="1" class="btn uno">1</button>
+        <button value="2" class="btn dos">2</button>
+        <button value="3" class="btn tres">3</button>
+        <button value="0" class="btn cero">0</button>
+        <button value="00" class="btn ceroDoble">00</button>
+        <button value="=" class="btn igual">=</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

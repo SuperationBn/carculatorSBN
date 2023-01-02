@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;700&display=swap');
+/* font-family: 'Kanit', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap');
+/* font-family: 'Orbitron', sans-serif; */
+
+:root {
+  /* LIgth */
+  --bg-ligth: linear-gradient(10deg, rgba(177, 177, 185, 0.984) 0%, rgba(117, 117, 158, 0.86) 35%, rgba(88, 161, 226, 0.668) 100%), url("https://cdn.pixabay.com/photo/2020/06/30/00/11/forest-5354783_960_720.jpg");
+  --bg-carculator-ligth: #e2e2e69d;
+  --bg-viwport-ligth: #e8e8e8b5;
+  --bg-menu-ligth: rgba(235, 230, 230, 0.281);
+  --text-color-ligth: #000814;
+  --border-color-ligth: #c2c3c4;
+  /* Dark */
+  --bg-dark: linear-gradient(10deg, rgba(15, 15, 16, 0.984) 0%, rgba(20, 20, 34, 0.86) 35%, rgba(15, 55, 87, 0.529) 100%), url("https://cdn.pixabay.com/photo/2017/08/01/20/20/nebula-2567749_960_720.jpg");
+  /* --bg-carculator-dark: #2f2f32; */
+  --bg-carculator-dark: #0707444b;
+  --bg-viwport-dark: #1d2f5185;
+  --bg-menu-dark: rgba(8, 32, 92, 0.46);
+  --text-color-dark: #e7e4e4;
+  --border-color-dark: #424b54;
+  /* Pikachu */
+  --bg-pikachu-normal: linear-gradient(10deg, rgba(0, 0, 0, 0.984) 0%, #fee54033 35%, rgba(0, 0, 0, 0.526) 100%), url("https://cdn.pixabay.com/photo/2020/08/29/16/08/pikachu-5527377__340.jpg");
+  --bg-carculator-pikachu-normal: #ffc40022;
+  --bg-viwport-pikachu-normal: #ffd60a7e;
+  --bg-menu-pikachu-normal: #001d3d;
+  --text-color-pikachu-normal: #000000;
+  --border-color-pikachu-normal: #000000;
+  /* Chicle */
+  --bg-chicle-normal: linear-gradient(10deg, rgba(78, 75, 75, 0.984) 0%, rgba(0, 0, 0, 0.526) 100%), url("https://cdn.pixabay.com/photo/2022/06/04/14/26/discs-7242103_640.jpg");
+  --bg-carculator-chicle-normal: #cc601c80;
+  --bg-viwport-chicle-normal: #f7800083;
+  --bg-menu-chicle-normal: #002f498c;
+  --text-color-chicle-normal: #ffffff;
+  --border-color-chicle-normal: #fdffff47;
+}
+
+.ligth-theme {
+  --bg-color: var(--bg-ligth);
+  --bg-carculator: var(--bg-carculator-ligth);
+  --bg-viwport: var(--bg-viwport-ligth);
+  --bg-menu: var(--bg-menu-ligth);
+  --text-color: var(--text-color-ligth);
+  --border-color: var(--border-color-ligth);
+}
+
+.dark-theme {
+  --bg-color: var(--bg-dark);
+  --bg-carculator: var(--bg-carculator-dark);
+  --bg-viwport: var(--bg-viwport-dark);
+  --bg-menu: var(--bg-menu-dark);
+  --text-color: var(--text-color-dark);
+  --border-color: var(--border-color-dark);
+}
+
+.pikachu-theme {
+  --bg-color: var(--bg-pikachu-normal);
+  --bg-carculator: var(--bg-carculator-pikachu-normal);
+  --bg-viwport: var(--bg-viwport-pikachu-normal);
+  --bg-menu: var(--bg-menu-pikachu-normal);
+  --text-color: var(--text-color-pikachu-normal);
+  --border-color: var(--border-color-pikachu-normal);  
+}
+
+.chicle-theme {
+  --bg-color: var(--bg-chicle-normal);
+  --bg-carculator: var(--bg-carculator-chicle-normal);
+  --bg-viwport: var(--bg-viwport-chicle-normal);
+  --bg-menu: var(--bg-menu-chicle-normal);
+  --text-color: var(--text-color-chicle-normal);
+  --border-color: var(--border-color-chicle-normal);  
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.2s ease-out;
+}
+
+html, body { height: 100%; overflow: hidden; }
+
+body { 
+  background: var(--bg-color);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header {
+  max-width: 500px;
+  width: 100%;
+  padding: 1rem;
+  margin: 0 auto;
+
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header { position: relative; }
+
+header .Menu .choseeTheme {
+  position: absolute;
+  height: 300px;
+  top: 100%;
+  right: 170px;
+  left: 0;
+
+  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+
+  padding: 0.4rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+
+  background: var(--bg-menu);
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  z-index: 1000;
+}
+
+header .Menu .choseeTheme.active { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+
+header .Menu .choseeTheme div {
+  padding: 0.6rem;
+  color: var(--text-color);
+  font-size: 1.3rem;
+  font-family: 'Gill Sans', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1.3px;
+}
+
+header .Menu i {
+  font-size: 1.7rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+header .logo h3 {
+  font-size: 1.3rem;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 200;
+  color: var(--text-color);
+}
+
+header .logo h3 > span { color: #57edf0; font-weight: 800; }
+
+header .Menu .choseeTheme .theme {
+  cursor: pointer;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: #d7d9dc63;
+}
+
+body.ligth-theme header .Menu .choseeTheme .theme { background-color: #7d7dba63; }
+
+header .Menu .choseeTheme .color {
+  width: 7px;
+  height: 7px;
+  border-radius: 3px;
+}
+
+header .Menu .choseeTheme .colorLigth { background-color: #ecedef; }
+header .Menu .choseeTheme .colorDark { background-color: #151516; }
+header .Menu .choseeTheme .colorPikachu { background-color: #ffd60a; }
+header .Menu .choseeTheme .colorChicle { background-color: #8338ec; }
+
+/* Main */
+main {
+  max-width: 500px;
+  width: 100%;
+  height: calc(100% - 68px);
+  margin: 0 auto;
+  padding-top: 2rem;
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+main .calculator {
+  width: 98%;
+  height: 100%;
+  margin: 0 auto;
+
+  position: relative;
+
+  display: grid;
+  grid-template-rows: repeat(8, 1fr);
+
+}
+
+.calculator .headerCarculator {
+  position: relative;
+  grid-row: 1 / 3;
+}
+
+.calculator .headerCarculator .showNumbersBox {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+  padding-right: 2.8rem;
+  padding-left: 0.3rem;
+
+  display: flex;
+  align-items: flex-end;
+
+  overflow: hidden;
+  background-color: var(--bg-viwport);
+  border: 1px solid var(--border-color);
+
+  box-shadow: 0px 1px 4px rgba(39, 38, 38, 0.326);
+}
+
+.calculator .headerCarculator .showNumbersBox > h4 {
+  position: absolute;
+  top: 30%;
+  right: 100px;
+  font-size: 1.8rem;
+  letter-spacing: 3px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #0000002d;
+}
+
+@media (max-height: 484px) {
+  .calculator .headerCarculator .showNumbersBox > h4 {
+    top: 0px;
+    left: 0px;
+    font-size: 1.3rem;
+  }
+}
+
+.calculator .headerCarculator .showNumbersBox > span {
+  width: 100%;
+  text-align: right;
+  font-size: 3rem;
+  color: var(--text-color);
+
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 330px) {
+  .calculator .headerCarculator .showNumbersBox > span {
+    font-size: 2rem;
+  } 
+}
+
+.calculator .bodyCalculator .fa-delete-left {
+  position: absolute;
+  cursor: pointer;
+  top: calc(25% - 85px);
+  right: 0;
+
+  background: none;
+  border: none;
+  color: var(--text-color);
+}
+
+.calculator .bodyCalculator {
+  grid-row: 3 / -1;
+
+  width: 100%;
+
+  padding: 2rem 0.5rem 0.5rem 0.5rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: 
+    "clear apart cpart mult"
+    ".     .     .       dividir"
+    ".     .     .       resta"
+    ".     .     .       sumar"
+    "cero  cero2 punto   igual"
+  ;
+
+  background-color: var(--bg-carculator);
+  box-shadow: 0px 1px 4px rgba(39, 38, 38, 0.326);
+
+}
+
+.calculator .bodyCalculator button {
+  font-size: 1.4rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-viwport);
+  color: var(--text-color);
+}
+
+body.dark-theme .calculator .bodyCalculator button:active { box-shadow: 0px 0px 1px 1px rgb(42, 176, 156); }
+body.dark-theme .calculator .headerCarculator .showNumbersBox > h4 { color: #ffffff3a; }
+body.chicle-theme .calculator .headerCarculator .showNumbersBox > h4 { color: #ffffff3a; }
+
+.calculator .bodyCalculator .clear { grid-area: clear; background-color: #e63946; color: white; font-size: 2rem;}
+.calculator .bodyCalculator .abrirParent { grid-area: apart; background-color: #71a6d8; }
+.calculator .bodyCalculator .cerrarParent { grid-area: cpart; background-color: #71a6d8; }
+.calculator .bodyCalculator .multi { grid-area: mult; background-color:rgb(43, 188, 96); font-size: 2rem;}
+.calculator .bodyCalculator .dividir { grid-area: dividir; background-color: rgb(43, 188, 96); font-size: 2rem;}
+.calculator .bodyCalculator .resta { grid-area: resta; background-color: rgb(43, 188, 96); font-size: 2rem;}
+.calculator .bodyCalculator .sumar { grid-area: sumar; background-color: #fca311; font-size: 2rem;}
+.calculator .bodyCalculator .cero { grid-area: cero; }
+.calculator .bodyCalculator .ceroDoble { grid-area: cero2; }
+.calculator .bodyCalculator .punto { grid-area: punto; background-color: #fca311; font-size: 2rem; font-weight: 800;}
+.calculator .bodyCalculator .igual { grid-area: igual; background-color: #76a8d7; font-size: 2rem;}
+
+body.pikachu-theme .calculator .bodyCalculator {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  gap: 0.4rem;
+
+}
+body.pikachu-theme .calculator .bodyCalculator .btn { border-radius: 50%; }
+
+@media (min-width: 642px){
+  body {
+    background-size: contain;
+  }
+
+  body.pikachu-theme .calculator .bodyCalculator .btn { border-radius: 0; }
+}
